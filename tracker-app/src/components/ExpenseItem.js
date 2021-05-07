@@ -1,11 +1,18 @@
-function ExpenseItem() {
-  const expenseDate = new Date(2021, 3, 28);
-  const expenseTitle = 'car Insurance';
-  const expenseAmount = '294.65';
+function ExpenseItem(prop) {
   return (
-
-    <h2> Expense item </h2>
-  )
+    <div>
+      <div>
+        <h3>
+          {prop.arrayObj.date.toLocaleDateString("en-US", { month: "long" })}{" "}
+        </h3>
+        <h1>
+          {prop.arrayObj.date.toLocaleDateString("en-US", { day: "numeric" })}{" "}
+        </h1>
+      </div>
+      <h2> {prop.arrayObj.title} </h2>
+      <p> ${prop.arrayObj.amount} </p>
+    </div>
+  );
 }
 
 export default ExpenseItem;
