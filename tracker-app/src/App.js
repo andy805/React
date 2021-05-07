@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem.js";
+import ExpenseLineItem from "./components/ExpenseLineItem.js";
 
 const expensesArray = [
   {
@@ -27,10 +27,10 @@ function App() {
   return (
     <div>
       <h2> Let 's get started!</h2> <p> This is also visible </p>
-      <ExpenseItem arrayObj={expensesArray[0]}> </ExpenseItem>
-      <ExpenseItem arrayObj={expensesArray[1]}> </ExpenseItem>
-      <ExpenseItem arrayObj={expensesArray[2]}> </ExpenseItem>
-      <ExpenseItem arrayObj={expensesArray[3]}> </ExpenseItem>
+      <ExpenseLineItem arrayObj={expensesArray[0]}/>
+      <ExpenseLineItem arrayObj={expensesArray[1]}/>
+      <ExpenseLineItem arrayObj={expensesArray[2]}/>
+      <ExpenseLineItem arrayObj={expensesArray[3]}/>
     </div>
   );
 }
