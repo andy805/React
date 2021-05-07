@@ -1,0 +1,33 @@
+
+.dateItem {
+  grid-column-start: auto;
+  grid-column-end: auto;
+  grid-row-start: auto;
+  grid-row-end: auto;
+  justify-self: center;
+  align-self: center;
+  border: solid;
+  border-radius: 10px;
+  padding: 5px 30% 5px;
+  margin: 5px 0px 5px;
+}
+
+.dateItemMonth {
+  align-self: center;
+  justify-self:center;
+  margin: 5px;
+}
+
+.dateItemDay {
+  align-self: center;
+  justify-self:center;
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.dateItemYear {
+  align-self: center;
+  justify-self:center;
+  font-size: 1rem;
+  margin: 0px 5px;
+}
