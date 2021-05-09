@@ -1,4 +1,4 @@
-import ExpenseMasterDetail from "./components/ExpenseMasterDetail.js";
+import ExpenseMasterDetail from "./components/Expenses/ExpenseMasterDetail.js";
 
 const expensesArray = [
   {
