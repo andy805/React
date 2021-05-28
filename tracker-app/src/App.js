@@ -1,4 +1,5 @@
 import ExpenseMasterDetail from "./components/Expenses/ExpenseMasterDetail.js";
+import NewExpense from './components/InputExpense/NewExpense.js';
 
 const expensesArray = [
   {
@@ -24,8 +25,12 @@ const expensesArray = [
 ];
 
 function App() {
+  const addNewExpenseHandler = (expense) => {
+    console.log(expense);
+  }
   return (
     <div>
+      <NewExpense onNewExpense={addNewExpenseHandler}/>
       <h2> Let 's get started!</h2> <p> This is also visible </p>
       <ExpenseMasterDetail arrObj={expensesArray}/>
       {/*
