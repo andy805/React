@@ -1,8 +1,9 @@
+import React,{useState} from 'react'
 import ExpenseMasterDetail from "./components/Expenses/ExpenseMasterDetail.js";
 import NewExpense from './components/InputExpense/NewExpense.js';
 import ExpenseYearFilter from './components/InputExpense/ExpenseYearFilter.js';
 
-const expensesArray = [
+const DUMMY_DATA = [
   {
     title: "fireball handle",
     amount: "24.99",
@@ -26,14 +27,17 @@ const expensesArray = [
 ];
 
 function App() {
+  const[expenses, setExpenses] = useState(DUMMY_DATA);
+
   const addNewExpenseHandler = (expense) => {
     console.log(expense);
+    setExpenses((prevState) => {return [expense, ...prevState];});
   }
   return (
     <div>
       <NewExpense onNewExpense={addNewExpenseHandler}/>
       <h2> Let 's get started!</h2> <p> This is also visible </p>
-      <ExpenseMasterDetail arrObj={expensesArray}/>
+      <ExpenseMasterDetail arrObj={expenses}/>
       {/*
       <ExpenseLineItem arrayObj={expensesArray[0]}/>
       <ExpenseLineItem arrayObj={expensesArray[1]}/>

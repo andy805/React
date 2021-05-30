@@ -14,10 +14,11 @@ function ExpenseMasterDetail(prop) {
     <div>
       <ExpenseYearFilter filter={filterYearHandler} />
       <Card className="ExpenseMasterDetail">
-        <ExpenseLineItem arrayObj={prop.arrObj[0]} />
+        {prop.arrObj.map((expense) => <ExpenseLineItem arrayObj={expense}/>)}
+        {/* <ExpenseLineItem arrayObj={prop.arrObj[0]} />
         <ExpenseLineItem arrayObj={prop.arrObj[1]} />
         <ExpenseLineItem arrayObj={prop.arrObj[2]} />
-        <ExpenseLineItem arrayObj={prop.arrObj[3]} />
+        <ExpenseLineItem arrayObj={prop.arrObj[3]} /> */}
       </Card>
     </div>
   );
