@@ -17,7 +17,7 @@ function ExpenseLineItem(prop) {
     <Card className="expenseLineItem">
       <ExpenseDateItem date={prop.arrayObj.date} />
       <h2 className="expenseLineItemDescription"> {title} </h2>
-      <p> ${prop.arrayObj.amount} </p>
+      <p> ${prop.arrayObj.price} </p>
       <button onClick={clickHandler}> click me </button>
     </Card>
   );
