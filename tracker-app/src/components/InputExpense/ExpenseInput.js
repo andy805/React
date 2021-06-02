@@ -35,27 +35,43 @@ const ExpenseInput = (props) => {
     props.onExpenseInputSubmit(expenseData);
   };
 
-  return (
-    <form onSubmit={submitHandler}>
-      <div>
+  const cancelHandler = (event) => {
+    setEnteredDate("");
+    setEnteredPrice("");
+    setEnteredTitle("");
+
+    props.onToggleFormHandler();
+  }
+
+  if(props.state === 0) {
+    return (<button onClick={props.onToggleFormHandler}>+ Add New Expense</button>)
+  }
+  else {
+
+    return (
+      <form onSubmit={submitHandler}>
         <div>
-          <label>Title</label>
-          <input type = "text" onChange={titleChangeHandler} value={enteredTitle}/>
+          <div>
+            <label>Title</label>
+            <input type = "text" onChange={titleChangeHandler} value={enteredTitle}/>
+          </div>
+          <div>
+            <label>Price</label>
+            <input type = "number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler}/>
+          </div>
+          <div>
+            <label>Date</label>
+            <input type = "date" value={enteredDate} onChange={dateChangeHandler}/>
+          </div>
         </div>
         <div>
-          <label>Price</label>
-          <input type = "number" min="0.01" step="0.01" value={enteredPrice} onChange={priceChangeHandler}/>
+          <button onClick={cancelHandler}>Cancel</button>
+          <button type="submit">+ Add Expense</button>
         </div>
-        <div>
-          <label>Date</label>
-          <input type = "date" value={enteredDate} onChange={dateChangeHandler}/>
-        </div>
-      </div>
-      <div>
-        <button type="submit">+ Add Expense</button>
-      </div>
-    </form>
-  )
+      </form>
+    )
+
+  }
 }
 
 
