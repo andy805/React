@@ -13,11 +13,8 @@ function ExpenseMasterDetail(prop) {
   };
   function filterByYear(expense) {
     let year = expense.date.getFullYear().toString();
-    console.log(year);
     if(year === filterYear){
-      console.log("true");
       return true;
-      // return ( (<ExpenseLineItem key={expense.id} arrayObj={expense}/>));
     }
     return false;
   }
@@ -25,12 +22,7 @@ function ExpenseMasterDetail(prop) {
     <div>
       <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
       <Card className="ExpenseMasterDetail">
-        {prop.arrObj.filter(filterByYear).map(expense => {return(<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
-        {/* {prop.arrObj.map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})} */}
-        {/* <ExpenseLineItem arrayObj={prop.arrObj[0]} />
-        <ExpenseLineItem arrayObj={prop.arrObj[1]} />
-        <ExpenseLineItem arrayObj={prop.arrObj[2]} />
-        <ExpenseLineItem arrayObj={prop.arrObj[3]} /> */}
+        {prop.arrObj.filter(filterByYear).map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
       </Card>
     </div>
   );
