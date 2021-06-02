@@ -6,23 +6,28 @@ import ExpenseYearFilter from './components/InputExpense/ExpenseYearFilter.js';
 const DUMMY_DATA = [
   {
     title: "fireball handle",
-    amount: "24.99",
-    date: new Date()
+    price: "24.99",
+    date: new Date(),
+    id:"D1"
   },
   {
     title: "round table pizza",
-    amount: "21.99",
-    date: new Date()
+    price: "21.99",
+    date: new Date(),
+    id:"D2"
   },
   {
     title: "gas",
-    amount: "44.99",
-    date: new Date()
+    price: "44.99",
+    date: new Date(),
+    id:"D3"
+
   },
   {
     title: "flowers",
-    amount: "84.99",
-    date: new Date()
+    price: "84.99",
+    date: new Date(),
+    id:"D4"
   },
 ];
 
@@ -31,7 +36,10 @@ function App() {
 
   const addNewExpenseHandler = (expense) => {
     console.log(expense);
-    setExpenses((prevState) => {return [expense, ...prevState];});
+    setExpenses(prevState => {
+      console.log([expense, ...prevState]);
+      return [expense, ...prevState];
+    });
   }
   return (
     <div>
