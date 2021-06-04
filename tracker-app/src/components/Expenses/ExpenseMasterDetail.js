@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {
+  useState
+} from 'react'
 import ExpenseLineItem from "./ExpenseLineItem.js";
 import ExpenseYearFilter from "../InputExpense/ExpenseYearFilter.js";
 import Card from "../UI/Card.js";
@@ -11,21 +13,38 @@ function ExpenseMasterDetail(prop) {
     console.log(year);
     setFilterYear(year);
   };
+
   function filterByYear(expense) {
     let year = expense.date.getFullYear().toString();
-    if(year === filterYear){
+    if (year === filterYear) {
       return true;
     }
     return false;
   }
-  return (
-    <div>
-      <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
-      <Card className="ExpenseMasterDetail">
-        {prop.arrObj.filter(filterByYear).map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
-      </Card>
-    </div>
-  );
+
+  const filteredExpenses = prop.arrObj.filter(filterByYear);
+
+  if (filteredExpenses.length === 0) {
+    // we have no expense for the year so show text
+    return (
+      <div>
+        <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
+      <p> No expenses for this year</p>
+      </div>
+    );
+
+  } else {
+    return (
+      <div>
+        <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
+        <Card className="ExpenseMasterDetail">
+          {filteredExpenses.map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
+        </Card>
+      </div>
+    );
+
+  }
+
 }
 
 export default ExpenseMasterDetail;
