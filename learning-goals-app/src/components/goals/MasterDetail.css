@@ -1,0 +1,13 @@
+
+.masterDetail {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+
+}
