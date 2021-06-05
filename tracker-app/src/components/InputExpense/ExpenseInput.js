@@ -33,6 +33,7 @@ const ExpenseInput = (props) => {
     setEnteredTitle("");
 
     props.onExpenseInputSubmit(expenseData);
+    props.onToggleFormHandler();
   };
 
   const cancelHandler = (event) => {
