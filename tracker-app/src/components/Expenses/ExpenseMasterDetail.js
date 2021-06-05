@@ -38,10 +38,8 @@ function ExpenseMasterDetail(prop) {
     return (
       <div>
         <div>
-          <Chart expenseList={filteredExpenses}/>
-        </div>
-        <div>
           <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
+          <Chart expenseList={filteredExpenses}/>
           <Card className="ExpenseMasterDetail">
             {filteredExpenses.map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
           </Card>
