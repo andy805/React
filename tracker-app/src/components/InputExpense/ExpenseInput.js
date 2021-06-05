@@ -25,7 +25,7 @@ const ExpenseInput = (props) => {
     const expenseData = {
       title: enteredTitle,
       date: new Date(enteredDate),
-      price: enteredPrice
+      price: +enteredPrice
     };
     console.log(expenseData);
     setEnteredDate("");
