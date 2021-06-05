@@ -5,6 +5,7 @@ import ExpenseLineItem from "./ExpenseLineItem.js";
 import ExpenseYearFilter from "../InputExpense/ExpenseYearFilter.js";
 import Card from "../UI/Card.js";
 import "./ExpenseMasterDetail.css";
+import Chart from './Chart.js';
 
 
 function ExpenseMasterDetail(prop) {
@@ -36,10 +37,15 @@ function ExpenseMasterDetail(prop) {
   } else {
     return (
       <div>
-        <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
-        <Card className="ExpenseMasterDetail">
-          {filteredExpenses.map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
-        </Card>
+        <div>
+          <Chart expenseList={filteredExpenses}/>
+        </div>
+        <div>
+          <ExpenseYearFilter selectedYear={filterYear} filter={filterYearHandler} />
+          <Card className="ExpenseMasterDetail">
+            {filteredExpenses.map(expense => {return (<ExpenseLineItem key={expense.id} arrayObj={expense} />)})}
+          </Card>
+        </div>
       </div>
     );
 
