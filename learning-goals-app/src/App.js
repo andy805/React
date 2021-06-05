@@ -1,5 +1,6 @@
 import React from 'react';
 import MasterDetail from './components/goals/MasterDetail.js';
+import NewGoal from './components/InputGoals/NewGoal.js';
 
 const DUMMY_DATA = [
   {
@@ -24,6 +25,7 @@ function App() {
   return (
     <div>
     <h1> Learning Goals </h1>
+    <NewGoal />
     <MasterDetail goals={DUMMY_DATA} />
   </div>
   );
