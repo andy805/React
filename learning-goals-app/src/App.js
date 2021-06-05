@@ -1,7 +1,31 @@
+import React from 'react';
+import MasterDetail from './components/goals/MasterDetail.js';
+
+const DUMMY_DATA = [
+  {
+    id:"GOL1",
+    goal: "Finish Section 6 Styling react components"
+  },
+  {
+    id:"GOL2",
+    goal: "Finish section 8 debugging"
+  },
+  {
+    id:"GOL3",
+    goal: "Finish this little project"
+  },
+  {
+    id:"GOL4",
+    goal: "Read Node Js book chapter 1"
+  },
+];
 
 function App() {
   return (
-    <h1> Learning Goals</h1>
+    <div>
+    <h1> Learning Goals </h1>
+    <MasterDetail goals={DUMMY_DATA} />
+  </div>
   );
 }
 
