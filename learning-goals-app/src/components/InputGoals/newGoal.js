@@ -2,8 +2,13 @@ import React from 'react';
 import NewGoalForm from './NewGoalForm.js'
 
 const NewGoal = (props) => {
+
+  const addGoalHandler = (goal) => {
+    props.addGoal(goal);
+  }
+
   return (
-    <NewGoalForm />
+    <NewGoalForm addGoal={addGoalHandler} counter={props.counter}/>
   );
 }
 

@@ -5,7 +5,7 @@ const MasterDetailRow = (props) => {
 
   return(
     <div className="masterDetailRow">
-    <h5>{props.goal}</h5>
+    {props.goal}
   </div>
   );
 }

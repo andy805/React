@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MasterDetail from './components/goals/MasterDetail.js';
 import NewGoal from './components/InputGoals/NewGoal.js';
+let COUNTER = 5;
 
 const DUMMY_DATA = [
   {
@@ -22,11 +23,22 @@ const DUMMY_DATA = [
 ];
 
 function App() {
+  const [goalArray, setGoalArray] = useState(DUMMY_DATA);
+  const [counter, setCounter] = useState(COUNTER);
+  const addGoalHandler = (goal) => {
+    setCounter(prevState => {
+      return prevState + 1;
+    });
+    setGoalArray(prevState => {
+      return [goal, ...prevState];
+    });
+  }
+
   return (
     <div>
     <h1> Learning Goals </h1>
-    <NewGoal />
-    <MasterDetail goals={DUMMY_DATA} />
+    <NewGoal addGoal={addGoalHandler} counter={counter}/>
+    <MasterDetail goals={goalArray} />
   </div>
   );
 }
