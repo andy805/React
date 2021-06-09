@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-import UserMasterDetail from './components/Users/UserMasterDetail.js'
+import React, {useState} from 'react';
+import NewUser from './components/NewUsers/NewUser.js';
+import UserMasterDetail from './components/Users/UserMasterDetail.js';
 let gCounter = 5;
 
 const DUMMY_DATA = [
@@ -29,9 +30,21 @@ const DUMMY_DATA = [
 function App() {
   const[counter, setCounter] = useState(gCounter);
   const[users, setUsers] = useState(DUMMY_DATA);
+
+  const addNewUserHandler = (newUser) => {
+    console.log(newUser);
+    setCounter((prevState) => {
+      return prevState + 1;
+    });
+    setUsers((prevState) => {
+      return [newUser , ...prevState]
+    });
+  }
+
   return (
 
     <div>
+      <NewUser addUser={addNewUserHandler}/>
       <UserMasterDetail users={users} counter={counter} />
     </div>
 
