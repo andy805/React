@@ -1,21 +1,40 @@
+import React, {useState} from 'react'
+import UserMasterDetail from './components/Users/UserMasterDetail.js'
+let gCounter = 5;
+
+const DUMMY_DATA = [
+  {
+    id: "USER1",
+    name: "Andy Velazquez",
+    age: 25
+  },
+  {
+    id: "USER2",
+    name: "Alyah Davis",
+    age: 22
+  },
+  {
+    id: "USER3",
+    name: "Marvin Velazquez",
+    age: 17
+  },
+  {
+    id: "USER4",
+    name: "Jaximus Prime",
+    age: 3
+  },
+
+]
 
 function App() {
+  const[counter, setCounter] = useState(gCounter);
+  const[users, setUsers] = useState(DUMMY_DATA);
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+      <UserMasterDetail users={users} counter={counter} />
     </div>
+
   );
 }
 
