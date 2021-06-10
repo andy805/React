@@ -44,8 +44,8 @@ function App() {
   return (
 
     <div>
-      <NewUser addUser={addNewUserHandler}/>
-      <UserMasterDetail users={users} counter={counter} />
+      <NewUser addUser={addNewUserHandler} counter={counter}/>
+      <UserMasterDetail users={users}  />
     </div>
 
   );

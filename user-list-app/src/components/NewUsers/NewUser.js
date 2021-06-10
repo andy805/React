@@ -9,7 +9,7 @@ const NewUser = (props) => {
 
   return (
     <div>
-      <UserForm newUserForm={addNewUser} />
+      <UserForm newUserForm={addNewUser} counter={props.counter}/>
     </div>
   );
 }
